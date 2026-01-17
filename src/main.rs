@@ -54,6 +54,7 @@ fn main() -> Result<()> {
     let options = ScanOptions {
         require_contract_exports: true,
         allow_unknown_imports: !args.deny_unknown_imports,
+        ..Default::default()
     };
 
     let report = scan_vtx_file(&args.path, &options)
